@@ -70,11 +70,11 @@ function decode(expr) {
       let decodedStr = [];
     
       for ( let i = 0; i < expr.length / 10; i++ ) {
-        arr10th.push( expr.substr(i * 10, ( i + 1 ) * 10));
+        arr10th.push( expr.substr(i * 10, 10));
       };
       
       for ( let i = 0; i < arr10th.length; i++ ) {
-        console.log('arr10th[i] = ',arr10th[i]);
+        
         let key = arr10th[i];
         decodedStr.push(obj[key]);
       };
