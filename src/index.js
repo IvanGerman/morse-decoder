@@ -38,7 +38,49 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    // write your solution here
+    let obj = {
+        '0000001011' : 'a',
+        '0011101010' : 'b',
+        '0011101110' : 'c',
+        '0000111010' : 'd',
+        '0000000010' : 'e',
+        '0010101110' : 'f',
+        '0000111110' : 'g',
+        '0010101010' : 'h',
+        '0000001010' : 'i',
+        '0000111011' : 'k',
+        '0010111010' : 'l',
+        '0000001111' : 'm',
+        '0000001110' : 'n',
+        '0000111111' : 'o',
+        '0010111110' : 'p',
+        '0011111011' : 'q',
+        '0000101110' : 'r',
+        '0000101010' : 's',
+        '0000000011' : 't',
+        '0000101011' : 'u',
+        '0010101011' : 'v',
+        '0000101111' : 'w',
+        '0011101011' : 'x',
+        '0011111010' : 'z',
+        '**********' : ' '
+      };
+      
+      let arr10th = [];
+      let decodedStr = [];
+    
+      for ( let i = 0; i < expr.length / 10; i++ ) {
+        arr10th.push( expr.substr(i * 10, ( i + 1 ) * 10));
+      };
+      
+      for ( let i = 0; i < arr10th.length; i++ ) {
+        console.log('arr10th[i] = ',arr10th[i]);
+        let key = arr10th[i];
+        decodedStr.push(obj[key]);
+      };
+      
+      decodedStr = decodedStr.join('');
+      return decodedStr;
 }
 
 module.exports = {
